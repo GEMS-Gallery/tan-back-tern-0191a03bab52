@@ -1,0 +1,14 @@
+type Result = 
+ variant {
+   err: text;
+   ok;
+ };
+type LinkPreview = 
+ record {
+   screenshotUrl: text;
+   title: text;
+ };
+service : {
+  getLinkPreview: (text) -> (opt LinkPreview) query;
+  saveLinkPreview: (text, text, text) -> (Result);
+}
